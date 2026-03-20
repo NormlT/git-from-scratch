@@ -1,3 +1,8 @@
 .env
 .DS_Store
 curriculum/**/.claude/
+
+# Personal files -- local only, never pushed
+progress.md
+.claude/session-log.md
+.claude/settings.local.json

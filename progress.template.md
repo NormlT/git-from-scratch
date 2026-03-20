@@ -1,8 +1,8 @@
 # Progress
 
 ## Part 1: Foundations
-- [ ] 01 - What is Git?
-- [ ] 02 - Setup & Config
+- [x] 01 - What is Git?
+- [x] 02 - Setup & Config
 - [ ] 03 - The Basics
 
 ## Part 2: Branching & Collaboration

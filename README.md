@@ -10,11 +10,19 @@ A hands-on, interactive course for learning Git and GitHub from the ground up. E
 - GitHub CLI installed (`gh --version`)
 - Claude Code (optional, for interactive guided walkthroughs)
 
+## Getting Started
+
+After cloning, create your personal progress file (it stays local -- never pushed):
+
+```bash
+cp progress.template.md progress.md
+```
+
 ## How to Use This Course
 
 ### With Claude Code (recommended)
 
-1. Open this folder in Claude Code: `claude` in `~/github/git-from-scratch/`
+1. Open this folder in Claude Code: `claude` in the repo directory
 2. Run `/lab` to start a guided walkthrough of your next module
 3. Claude reads your progress, explains concepts, walks you through exercises step by step, and marks modules complete when you're done
 4. Jump to a specific module: `/lab 04`

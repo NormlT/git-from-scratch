@@ -2,7 +2,7 @@ Guide me through the next incomplete lab exercise.
 
 ## Instructions
 
-1. Read `progress.md` to find the first unchecked module
+1. Read `progress.md` to find the first unchecked module. If `progress.md` doesn't exist, tell the user to run `cp progress.template.md progress.md` first.
 2. Read that module's `lesson.md` -- give a brief summary of the concept (2-3 sentences)
 3. Read that module's `lab.md` for the exercise instructions
 4. Ask if I've already run `bash setup.sh` for this module. If not, tell me to run it first.

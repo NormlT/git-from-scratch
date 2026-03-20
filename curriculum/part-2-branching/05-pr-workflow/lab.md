@@ -41,14 +41,7 @@ git switch -c add-greeting
 Create a `greeting.py` file with a simple function. Stage and commit it.
 
 ```bash
-cat > greeting.py << 'EOF'
-def greet(name):
-    """Return a friendly greeting."""
-    return f"Hello, {name}! Welcome aboard."
-
-if __name__ == "__main__":
-    print(greet("World"))
-EOF
+printf '%s\n' 'def greet(name):' '    """Return a friendly greeting."""' '    return f"Hello, {name}! Welcome aboard."' '' 'if __name__ == "__main__":' '    print(greet("World"))' > greeting.py
 
 git add greeting.py
 git commit -m "Add greeting function"
@@ -83,22 +76,7 @@ gh pr view
 Make an improvement to your function. Commit and push -- the PR updates automatically.
 
 ```bash
-cat > greeting.py << 'EOF'
-def greet(name, formal=False):
-    """Return a friendly greeting.
-
-    Args:
-        name: The person's name.
-        formal: If True, use a formal greeting.
-    """
-    if formal:
-        return f"Good day, {name}. It is a pleasure to meet you."
-    return f"Hello, {name}! Welcome aboard."
-
-if __name__ == "__main__":
-    print(greet("World"))
-    print(greet("Professor", formal=True))
-EOF
+printf '%s\n' 'def greet(name, formal=False):' '    """Return a friendly greeting."""' '    if formal:' '        return f"Good day, {name}. It is a pleasure to meet you."' '    return f"Hello, {name}! Welcome aboard."' '' 'if __name__ == "__main__":' '    print(greet("World"))' '    print(greet("Professor", formal=True))' > greeting.py
 
 git add greeting.py
 git commit -m "Add formal greeting option"

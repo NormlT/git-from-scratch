@@ -31,13 +31,7 @@ git log --oneline
 Create a file called `app.py` with a simple print statement. Then run `git status` -- notice it shows as "untracked." Git sees the file but is not tracking it yet.
 
 ```bash
-cat > app.py << 'EOF'
-def main():
-    print("Hello, world!")
-
-if __name__ == "__main__":
-    main()
-EOF
+printf '%s\n' 'def main():' '    print("Hello, world!")' '' 'if __name__ == "__main__":' '    main()' > app.py
 
 git status
 ```
@@ -65,21 +59,9 @@ git log --oneline
 Edit `app.py` to add a second function. Also create a new file `utils.py` with a helper function.
 
 ```bash
-cat > app.py << 'EOF'
-def main():
-    print("Hello, world!")
+printf '%s\n' 'def main():' '    print("Hello, world!")' '' 'def greet(name):' '    return f"Hello, {name}!"' '' 'if __name__ == "__main__":' '    main()' > app.py
 
-def greet(name):
-    return f"Hello, {name}!"
-
-if __name__ == "__main__":
-    main()
-EOF
-
-cat > utils.py << 'EOF'
-def format_name(first, last):
-    return f"{first} {last}"
-EOF
+printf '%s\n' 'def format_name(first, last):' '    return f"{first} {last}"' > utils.py
 ```
 
 ### 6. See the unstaged changes

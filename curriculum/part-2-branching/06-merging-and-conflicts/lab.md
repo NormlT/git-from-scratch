@@ -71,16 +71,7 @@ cat config.py
 Edit the file to produce the version you want. Remove the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`), and keep whichever lines you prefer (or combine them). For example:
 
 ```bash
-cat > config.py << 'EOF'
-"""Application configuration."""
-
-APP_NAME = "MyApp"
-VERSION = "2.0.0"
-DEBUG = False
-LOG_LEVEL = "INFO"
-MAX_RETRIES = 5
-TIMEOUT = 30
-EOF
+printf '%s\n' '"""Application configuration."""' '' 'APP_NAME = "MyApp"' 'VERSION = "2.0.0"' 'DEBUG = False' 'LOG_LEVEL = "INFO"' 'MAX_RETRIES = 5' 'TIMEOUT = 30' > config.py
 ```
 
 ### 8. Mark the conflict as resolved

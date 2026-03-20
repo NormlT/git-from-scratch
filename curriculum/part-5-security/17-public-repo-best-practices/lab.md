@@ -101,34 +101,17 @@ git commit -m "Improve .gitignore with patterns for secrets, IDE, and OS files"
 
 Choose a license and create the file. Here is MIT as an example:
 
+Use curl to fetch the MIT license text directly (no copy-paste required):
+
 ```bash
-cat > LICENSE << 'EOF'
-MIT License
-
-Copyright (c) 2026 Your Name
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-EOF
+curl -s https://raw.githubusercontent.com/nicklockwood/MIT-LICENSE/master/MIT-LICENSE \
+  | sed "s/Copyright .*/Copyright (c) $(date +%Y) Your Name/" > LICENSE
 
 git add LICENSE
 git commit -m "Add MIT license"
 ```
+
+Alternatively, open `nano LICENSE` and paste the text from [choosealicense.com/licenses/mit](https://choosealicense.com/licenses/mit/) -- click the copy button on that page.
 
 ### 8. Add CODEOWNERS
 
@@ -136,15 +119,7 @@ Create a CODEOWNERS file to require reviews for sensitive paths:
 
 ```bash
 mkdir -p .github
-cat > .github/CODEOWNERS << 'EOF'
-# Default owner for everything
-* @your-username
-
-# Specific owners for sensitive areas
-/config.py @your-username
-/.github/ @your-username
-/.gitignore @your-username
-EOF
+printf '%s\n' '# Default owner for everything' '* @your-username' '' '# Specific owners for sensitive areas' '/config.py @your-username' '/.github/ @your-username' '/.gitignore @your-username' > .github/CODEOWNERS
 
 git add .github/CODEOWNERS
 git commit -m "Add CODEOWNERS for review requirements"

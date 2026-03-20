@@ -36,24 +36,7 @@ This is a simple Python project with some dependencies.
 This file tells people how to responsibly report vulnerabilities in your project:
 
 ```bash
-cat > SECURITY.md << 'EOF'
-# Security Policy
-
-## Reporting a Vulnerability
-
-Please email security@example.com to report vulnerabilities.
-Do not open a public issue for security bugs.
-
-## Supported Versions
-
-| Version | Supported |
-|---------|-----------|
-| 1.x     | Yes       |
-
-## Response Timeline
-
-We will acknowledge your report within 48 hours and aim to release a fix within 7 days for critical vulnerabilities.
-EOF
+printf '%s\n' '# Security Policy' '' '## Reporting a Vulnerability' '' 'Please email security@example.com to report vulnerabilities.' 'Do not open a public issue for security bugs.' '' '## Supported Versions' '' '| Version | Supported |' '|---------|-----------|' '| 1.x     | Yes       |' '' '## Response Timeline' '' 'We will acknowledge your report within 48 hours and aim to release a fix within 7 days for critical vulnerabilities.' > SECURITY.md
 ```
 
 ### 3. Commit and push SECURITY.md
@@ -84,17 +67,7 @@ This gives you fine-grained control over how Dependabot checks for updates:
 
 ```bash
 mkdir -p .github
-cat > .github/dependabot.yml << 'EOF'
-version: 2
-updates:
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    labels:
-      - "dependencies"
-EOF
+printf '%s\n' 'version: 2' 'updates:' '  - package-ecosystem: "pip"' '    directory: "/"' '    schedule:' '      interval: "weekly"' '    open-pull-requests-limit: 10' '    labels:' '      - "dependencies"' > .github/dependabot.yml
 ```
 
 ### 7. Commit and push the Dependabot config
@@ -112,11 +85,7 @@ This tells Dependabot to check Python dependencies weekly and label its PRs with
 Update `requirements.txt` to include an intentionally old package version with known vulnerabilities:
 
 ```bash
-cat > requirements.txt << 'EOF'
-flask==2.0.0
-requests==2.20.0
-jinja2==3.0.0
-EOF
+printf '%s\n' 'flask==2.0.0' 'requests==2.20.0' 'jinja2==3.0.0' > requirements.txt
 
 git add requirements.txt
 git commit -m "Pin dependencies to specific versions"

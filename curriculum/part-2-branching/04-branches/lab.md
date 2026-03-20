@@ -48,13 +48,7 @@ git branch
 Create a `login.py` file and commit it. This commit only exists on `feature-login`.
 
 ```bash
-cat > login.py << 'EOF'
-def login(username, password):
-    """Authenticate a user."""
-    if username and password:
-        return True
-    return False
-EOF
+printf '%s\n' 'def login(username, password):' '    """Authenticate a user."""' '    if username and password:' '        return True' '    return False' > login.py
 
 git add login.py
 git commit -m "Add login function"
@@ -83,11 +77,7 @@ Create another branch directly from main using the shortcut that creates and swi
 
 ```bash
 git switch -c feature-signup
-cat > signup.py << 'EOF'
-def signup(username, email, password):
-    """Register a new user."""
-    return {"username": username, "email": email}
-EOF
+printf '%s\n' 'def signup(username, email, password):' '    """Register a new user."""' '    return {"username": username, "email": email}' > signup.py
 
 git add signup.py
 git commit -m "Add signup function"

@@ -39,3 +39,36 @@ When guiding a user through labs (via `/lab` or direct requests):
 ## Privacy
 
 This is a public repository. Do not write personal information (real names, emails, usernames, home directory paths) into any tracked file. Use generic placeholders in all examples and documentation.
+
+## Code Quality & Review Requirements
+
+Before ANY commit or push:
+1. Use the `compound-engineering:ce-review` skill for review of content changes
+2. Use `differential-review:differential-review` for review before pushing
+
+## Mandatory Skills & Agents
+
+### Always Use
+- **superpowers:verification-before-completion** -- verify bash scripts run correctly before claiming done
+- **compound-engineering:git-commit** -- consistent commit messages
+
+### When Applicable
+- **compound-engineering:document-review** -- for educational content quality, coherence, and pedagogical completeness
+- **correctness-reviewer** (agent) -- setup scripts must work correctly (create temp repos, git operations)
+- **project-standards-reviewer** (agent) -- all 17 modules must follow consistent structure (lesson.md, lab.md, setup.sh)
+
+## Content Rules
+
+- Each module MUST have: lesson.md, lab.md, setup.sh
+- Setup scripts create isolated practice repos in /tmp/git-lab-NN/
+- Labs must include verification steps and quizzes
+- NEVER write personal information (real names, emails, usernames, home directory paths) into tracked files
+- Use generic placeholders in all examples and documentation
+- GitHub platform labs (05, 11, 12, 13, 14, 16) require gh CLI authentication -- document this clearly
+
+## Project-Specific Conventions
+
+- No build system, no tests, no package manager, no CI
+- Content is curriculum, not application code
+- Setup scripts are intentionally destructive to lab directories (safe, /tmp/)
+- MIT License (Copyright 2026 NormlT)

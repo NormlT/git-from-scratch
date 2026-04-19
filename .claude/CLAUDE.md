@@ -4,6 +4,15 @@
 
 An interactive Git/GitHub learning course. 17 modules organized in 5 parts, each with a lesson, lab exercises, and setup scripts.
 
+## Testing & Verification
+
+**Test command**: n/a -- educational content, no code
+**Local dev run**: n/a -- no code to run; use Claude Code `/lab` mode to walk through modules
+**Served at**: n/a
+**Verify instance**: n/a -- not a software project
+
+**Gotchas**: Not a code project -- skip `/build` verification for this repo entirely.
+
 ## How to Guide Labs
 
 When guiding a user through labs (via `/lab` or direct requests):

@@ -1,0 +1,19 @@
+# Gitleaks configuration for git-from-scratch.
+#
+# This is an EDUCATIONAL Git/GitHub course. Several lab setup scripts
+# deliberately commit FAKE credentials into disposable /tmp/git-lab-NN/
+# practice repos -- the lessons explain *why* this is bad and walk learners
+# through the proper fix. See cyber-neo report CN-002 for context.
+#
+# This config extends the default gitleaks rule set (does NOT replace it)
+# and adds path-based allow-listing for the two pedagogical setup scripts.
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Educational fake credentials in lab setup scripts (intentional)"
+paths = [
+    '''curriculum/part-3-recovery/10-cherry-pick-and-history/setup\.sh''',
+    '''curriculum/part-5-security/17-public-repo-best-practices/setup\.sh''',
+]

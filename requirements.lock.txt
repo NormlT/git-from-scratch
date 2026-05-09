@@ -1,0 +1,30 @@
+# Locked dependency tree for the OpenRouter lab runner.
+#
+# Generated from requirements.txt with `uv pip install` + `uv pip freeze`.
+# Every transitive dependency is pinned for reproducibility (CN-004).
+# To install from this lock file:
+#     uv pip install -r requirements.lock.txt
+#     # or:
+#     pip install -r requirements.lock.txt
+#
+# Regenerate when bumping `openai` in requirements.txt:
+#     rm -rf .venv && uv venv && uv pip install -r requirements.txt
+#     uv pip freeze | sort > requirements.lock.txt
+# Then edit this header back in.
+
+annotated-types==0.7.0
+anyio==4.13.0
+certifi==2026.4.22
+distro==1.9.0
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+idna==3.13
+jiter==0.14.0
+openai==1.109.1
+pydantic==2.13.4
+pydantic-core==2.46.4
+sniffio==1.3.1
+tqdm==4.67.3
+typing-extensions==4.15.0
+typing-inspection==0.4.2

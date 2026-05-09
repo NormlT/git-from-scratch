@@ -1,0 +1,4 @@
+# Direct dependency for the OpenRouter-driven lab runner.
+# Pinned to an exact version for reproducibility (CN-001).
+# See requirements.lock.txt for the full transitive-dep lock.
+openai==1.109.1

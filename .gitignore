@@ -1,0 +1,26 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Personal progress (created from progress.template.md)
+progress.md
+
+# Python (created when lab.py is imported by tests/tools)
+__pycache__/
+*.pyc
+
+# Claude Code -- per-learner state and any nested per-module overrides
+# (project-level .claude/CLAUDE.md, .claude/rules/, .claude/settings.json
+# ARE intentionally tracked at the repo root; we only ignore PERSONAL
+# overlays that learners drop into nested .claude/ directories or any
+# generated docs/.
+curriculum/**/.claude/
+docs/
+
+# Editor / tooling caches
+.caliber/
